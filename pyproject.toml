@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "youtubedl-python"
+version = "0.1.0"
+description = ""
+authors = ["syuuma-ito <itosyuuma@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+taskipy = "^1.12.2"
+yt-dlp = "^2023.11.16"
+pyinstaller = "^6.3.0"
+flet = "^0.15.0"
+rich = "^13.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.taskipy.tasks]
+start = 'python src/main.py'
+dev = 'python src/main.py'
+build = 'pyinstaller -F src/main.py --onefile --name youtubeダウンロード'
